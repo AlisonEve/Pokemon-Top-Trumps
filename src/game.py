@@ -1,19 +1,5 @@
-import random
-import requests
-
-
-def pokemon_chooser():
-    poke_id = random.randint(1, 152)
-    url = 'https://pokeapi.co/api/v2/pokemon/{}/'.format(poke_id)
-    response = requests.get(url)
-    pokemon = response.json()
-    pokemon_info = {"Name": pokemon["name"], "ID": poke_id, "Height": pokemon["height"], "Weight": pokemon["weight"]}
-    return pokemon_info
-
-
-def dictionary_print(info):
-    for key, value in info.items():
-        print(f"{key}: {value}")
+from func_pokemon_chooser import pokemon_chooser
+from func_dict_print import dictionary_print
 
 
 game_round = 0
